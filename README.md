@@ -338,15 +338,16 @@ uploadArtefacts:
 ### Run from GitHub Actions
 
 [`.github/workflows/hyperexecute.yml`](.github/workflows/hyperexecute.yml) runs the same job from
-GitHub. It runs on every push to `main` (except README/docs-only changes), and you can also start it
-by hand from **Actions → HyperExecute macOS tests → Run workflow**.
+GitHub. No secrets need to be set up; the credentials are entered when you start it:
 
-1. Add two repository secrets (Settings → Secrets and variables → Actions):
-   `LT_USERNAME` and `LT_ACCESS_KEY`.
-2. The workflow downloads the Linux CLI on an `ubuntu-latest` runner, validates the YAML, runs the
-   job, and streams it into the Actions log. The tests themselves run on HyperExecute's macOS runners.
-3. The job link is added to the run summary, and the downloaded logs and artifacts are uploaded as
-   the `hyperexecute-results` artifact.
+1. Fork the repo (or use it directly if you have write access).
+2. Go to **Actions → HyperExecute macOS tests → Run workflow**.
+3. Enter your **LambdaTest username** and **access key**, and click **Run workflow**.
+
+The workflow downloads the Linux CLI on an `ubuntu-latest` runner, validates the YAML, runs the job
+and streams it into the Actions log. The tests themselves run on HyperExecute's macOS runners.
+The credentials are masked in the logs. The HyperExecute job link is added to the run summary, and
+the downloaded logs and artifacts are uploaded as the `hyperexecute-results` artifact.
 
 ---
 
