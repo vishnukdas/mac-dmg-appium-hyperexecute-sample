@@ -1,25 +1,25 @@
 [INFO] Scanning for projects...
 [INFO] 
-[INFO] --------------< com.testmu.samples:mac-dmg-appium-sample >--------------
-[INFO] Building mac-dmg-appium-sample 1.0.0
+[INFO] --------------< com.testmu.samples:mac-dmg-appium-hyperexecute-sample >--------------
+[INFO] Building mac-dmg-appium-hyperexecute-sample 1.0.0
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mac-dmg-appium-sample ---
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/ltuser/foreman/mac-dmg-appium-sample/src/main/resources
+[INFO] skip non existing resourceDirectory /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/src/main/resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ mac-dmg-appium-sample ---
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] No sources to compile
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mac-dmg-appium-sample ---
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/ltuser/foreman/mac-dmg-appium-sample/src/test/resources
+[INFO] skip non existing resourceDirectory /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/src/test/resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ mac-dmg-appium-sample ---
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] Nothing to compile - all classes are up to date.
 [INFO] 
-[INFO] --- maven-surefire-plugin:3.5.2:test (default-test) @ mac-dmg-appium-sample ---
+[INFO] --- maven-surefire-plugin:3.5.2:test (default-test) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
 [INFO] 
 [INFO] -------------------------------------------------------
@@ -28,7 +28,7 @@
 [INFO] Running TestSuite
 
 [TEST] START MarkTextTest.zoomInEnlargesTextToMaximum
-[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/MarkText.app
+[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/MarkText.app
 [STEP] App is ready
 [STEP] Type "This is a sample test for automating the marktext app in macOS on HyperExecute" in the editor
 [STEP] Words label height before zoom: 15px
@@ -47,7 +47,7 @@
 [TEST] PASS MarkTextTest.zoomInEnlargesTextToMaximum (24.3s)
 
 [TEST] START MarkTextTest.documentStatisticsPopupShowsCounts
-[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/MarkText.app
+[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/MarkText.app
 [STEP] App is ready
 [STEP] Type "This is a sample test for automating the marktext app in macOS on HyperExecute" in the editor
 [STEP] Open document statistics
@@ -56,14 +56,14 @@
 [TEST] PASS MarkTextTest.documentStatisticsPopupShowsCounts (8.5s)
 
 [TEST] START MarkTextTest.launchesWithEmptyUntitledDocument
-[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/MarkText.app
+[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/MarkText.app
 [STEP] App is ready
 [STEP] Saved screenshot build/test-results/screenshots/MarkTextTest-launchesWithEmptyUntitledDocument-pass.png
 [STEP] Quit app and end session
 [TEST] PASS MarkTextTest.launchesWithEmptyUntitledDocument (0.5s)
 
 [TEST] START MarkTextTest.nativeMenuTurnsParagraphIntoHeading
-[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/MarkText.app
+[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/MarkText.app
 [STEP] App is ready
 [STEP] Type "This is a sample test for automating the marktext app in macOS on HyperExecute" in the editor
 [STEP] Menu Paragraph > Heading 1
@@ -72,7 +72,7 @@
 [TEST] PASS MarkTextTest.nativeMenuTurnsParagraphIntoHeading (9.7s)
 
 [TEST] START MarkTextTest.typingUpdatesEditorAndWordCount
-[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/MarkText.app
+[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/MarkText.app
 [STEP] App is ready
 [STEP] Type "This is a sample test for automating the marktext app in macOS on HyperExecute" in the editor
 [STEP] Saved screenshot build/test-results/screenshots/MarkTextTest-typingUpdatesEditorAndWordCount-pass.png

@@ -211,9 +211,9 @@ Apache Maven 3.8.8
 Setting up machine to allow Automation Mode without requiring user authentication... succeeded.
 This device DOES NOT REQUIRE user authentication to enable Automation Mode.
 ...
-Installed /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app (com.testmu.samples.DMGSampleApp)
+Installed /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app (com.testmu.samples.DMGSampleApp)
 Downloading https://github.com/marktext/marktext/releases/download/v0.23.0/marktext-mac-arm64-0.23.0.dmg
-Installed /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/MarkText.app (com.github.marktext.marktext)
+Installed /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/MarkText.app (com.github.marktext.marktext)
 ```
 
 `npm ci` and `appium driver install mac2` print nothing here because they were skipped: those
@@ -229,7 +229,7 @@ duration, followed by the usual Maven summary
 ```
 [INFO] Running TestSuite
 [TEST] START MarkTextTest.zoomInEnlargesTextToMaximum
-[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/MarkText.app
+[STEP] Launch com.github.marktext.marktext from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/MarkText.app
 [STEP] App is ready
 [STEP] Type "This is a sample test for automating the marktext app in macOS on HyperExecute" in the editor
 [STEP] Words label height before zoom: 15px
@@ -287,8 +287,7 @@ runson: mac26          # macOS Tahoe (26.x), arm64, with full Xcode
 Docs: [`version`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#version), [`runson`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#runson).
 
 **Use `mac26`.** Mac2 builds WebDriverAgentMac with `xcodebuild`, so it needs **full Xcode**, not just
-the Command Line Tools. The plain `mac` image (macOS 15.3) has only the Command Line Tools, and Mac2
-fails there with `xcodebuild ... exited with code 1`.
+the Command Line Tools. The `mac26` image (macOS Tahoe) has full Xcode.
 
 ```yaml
 concurrency: 2

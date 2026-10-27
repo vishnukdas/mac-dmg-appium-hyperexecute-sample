@@ -1,6 +1,5 @@
 ---
 version: 0.1
-# macOS Tahoe (26). Plain "mac" lands on Sequoia without full Xcode, which Mac2 needs.
 runson: mac26
 
 # One GUI app per VM: Mac2 drives the real desktop, so suites must not share a machine.

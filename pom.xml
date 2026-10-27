@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.testmu.samples</groupId>
-    <artifactId>mac-dmg-appium-sample</artifactId>
+    <artifactId>mac-dmg-appium-hyperexecute-sample</artifactId>
     <version>1.0.0</version>
 
     <properties>

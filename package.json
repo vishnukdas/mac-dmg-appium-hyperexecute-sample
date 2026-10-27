@@ -1,5 +1,5 @@
 {
-  "name": "mac-dmg-appium-sample",
+  "name": "mac-dmg-appium-hyperexecute-sample",
   "private": true,
   "scripts": {
     "appium": "APPIUM_HOME=./.appium appium --address 127.0.0.1 --port 4723",

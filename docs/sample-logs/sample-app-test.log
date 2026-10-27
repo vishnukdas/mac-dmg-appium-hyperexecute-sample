@@ -1,25 +1,25 @@
 [INFO] Scanning for projects...
 [INFO] 
-[INFO] --------------< com.testmu.samples:mac-dmg-appium-sample >--------------
-[INFO] Building mac-dmg-appium-sample 1.0.0
+[INFO] --------------< com.testmu.samples:mac-dmg-appium-hyperexecute-sample >--------------
+[INFO] Building mac-dmg-appium-hyperexecute-sample 1.0.0
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mac-dmg-appium-sample ---
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/ltuser/foreman/mac-dmg-appium-sample/src/main/resources
+[INFO] skip non existing resourceDirectory /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/src/main/resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ mac-dmg-appium-sample ---
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] No sources to compile
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mac-dmg-appium-sample ---
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/ltuser/foreman/mac-dmg-appium-sample/src/test/resources
+[INFO] skip non existing resourceDirectory /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/src/test/resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ mac-dmg-appium-sample ---
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] Nothing to compile - all classes are up to date.
 [INFO] 
-[INFO] --- maven-surefire-plugin:3.5.2:test (default-test) @ mac-dmg-appium-sample ---
+[INFO] --- maven-surefire-plugin:3.5.2:test (default-test) @ mac-dmg-appium-hyperexecute-sample ---
 [INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
 [INFO] 
 [INFO] -------------------------------------------------------
@@ -28,7 +28,7 @@
 [INFO] Running TestSuite
 
 [TEST] START GreetingTest.appLaunchesWithMainWindow
-[STEP] Launch com.testmu.samples.DMGSampleApp from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app
+[STEP] Launch com.testmu.samples.DMGSampleApp from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app
 [STEP] App is ready
 [STEP] Find the main window
 [STEP] Saved screenshot build/test-results/screenshots/GreetingTest-appLaunchesWithMainWindow-pass.png
@@ -36,7 +36,7 @@
 [TEST] PASS GreetingTest.appLaunchesWithMainWindow (0.3s)
 
 [TEST] START GreetingTest.clearResetsTheForm
-[STEP] Launch com.testmu.samples.DMGSampleApp from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app
+[STEP] Launch com.testmu.samples.DMGSampleApp from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app
 [STEP] App is ready
 [STEP] Type "Sample User"
 [STEP] Click greetButton
@@ -46,7 +46,7 @@
 [TEST] PASS GreetingTest.clearResetsTheForm (1.7s)
 
 [TEST] START GreetingTest.greetsEnteredName
-[STEP] Launch com.testmu.samples.DMGSampleApp from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app
+[STEP] Launch com.testmu.samples.DMGSampleApp from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app
 [STEP] App is ready
 [STEP] Type "Alex"
 [STEP] Click greetButton
@@ -55,7 +55,7 @@
 [TEST] PASS GreetingTest.greetsEnteredName (1.0s)
 
 [TEST] START GreetingTest.showsValidationForEmptyName
-[STEP] Launch com.testmu.samples.DMGSampleApp from /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app
+[STEP] Launch com.testmu.samples.DMGSampleApp from /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app
 [STEP] App is ready
 [STEP] Click greetButton
 [STEP] Saved screenshot build/test-results/screenshots/GreetingTest-showsValidationForEmptyName-pass.png

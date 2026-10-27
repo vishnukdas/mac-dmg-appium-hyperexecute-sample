@@ -1,5 +1,5 @@
 ******************* npx appium --address 127.0.0.1 --port 4723 --log build/test-results/appium.log --log-level info:debug *******************
-dbug Appium Creating hash file directory: /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/.cache/appium
+dbug Appium Creating hash file directory: /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/.appium/node_modules/.cache/appium
 [Appium] Welcome to Appium v3.8.0
 [Appium] Non-default server args:
 [Appium] { address: '127.0.0.1', loglevel: 'info:debug' }
@@ -10,10 +10,10 @@ dbug Appium Creating hash file directory: /Users/ltuser/foreman/mac-dmg-appium-s
 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
 [HTTP] --> GET /status {}
 [HTTP] <-- GET /status 200 3 ms - 110
-[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
+[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
 [Appium] Attempting to find matching driver for automationName 'Mac2' and platformName 'mac'
 [Appium] The 'mac2' driver was installed and matched caps.
-[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver
+[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/.appium/node_modules/appium-mac2-driver
 [AppiumDriver@d1e9] Appium v3.8.0 creating new Mac2Driver (v4.5.0) session
 [AppiumDriver@d1e9] Checking BaseDriver versions for Appium and Mac2Driver
 [AppiumDriver@d1e9] Appium's BaseDriver version is 10.8.1
@@ -26,7 +26,7 @@ dbug Appium Creating hash file directory: /Users/ltuser/foreman/mac-dmg-appium-s
 [d4412ee8][BaseDriver] Unsubscribing bacef20d-0efb-49eb-93ca-062974d1817c from topic 'mac2:sessionReleased'
 [d4412ee8][WebDriverAgentMac] There is no need to perform the project cleanup. A fresh install has been detected
 [d4412ee8][WebDriverAgentMac] Mac2Driver host process logging is disabled. All the xcodebuild output is going to be suppressed. Set the 'showServerLogs' capability to 'true' if this is an undesired behavior
-[d4412ee8][WebDriverAgentMac] Starting Mac2Driver host process: xcodebuild build-for-testing test-without-building -project /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver/WebDriverAgentMac/WebDriverAgentMac.xcodeproj -scheme WebDriverAgentRunner COMPILER_INDEX_STORE_ENABLE\=NO
+[d4412ee8][WebDriverAgentMac] Starting Mac2Driver host process: xcodebuild build-for-testing test-without-building -project /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/.appium/node_modules/appium-mac2-driver/WebDriverAgentMac/WebDriverAgentMac.xcodeproj -scheme WebDriverAgentRunner COMPILER_INDEX_STORE_ENABLE\=NO
 [d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
 [d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
 [d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
@@ -70,10 +70,10 @@ dbug Appium Creating hash file directory: /Users/ltuser/foreman/mac-dmg-appium-s
 [d4412ee8][HTTP] <-- DELETE /session/d4412ee8-3670-4c8c-8189-50d8611540d9 200 3 ms - 14
 [HTTP] --> GET /status {}
 [HTTP] <-- GET /status 200 0 ms - 110
-[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
+[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
 [Appium] Attempting to find matching driver for automationName 'Mac2' and platformName 'mac'
 [Appium] The 'mac2' driver was installed and matched caps.
-[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver
+[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/.appium/node_modules/appium-mac2-driver
 [AppiumDriver@d1e9] Appium v3.8.0 creating new Mac2Driver (v4.5.0) session
 [AppiumDriver@d1e9] Checking BaseDriver versions for Appium and Mac2Driver
 [AppiumDriver@d1e9] Appium's BaseDriver version is 10.8.1
@@ -137,10 +137,10 @@ dbug Appium Creating hash file directory: /Users/ltuser/foreman/mac-dmg-appium-s
 [846a03da][HTTP] <-- DELETE /session/846a03da-65bb-4b18-be77-ee250ce05bad 200 2 ms - 14
 [HTTP] --> GET /status {}
 [HTTP] <-- GET /status 200 0 ms - 110
-[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
+[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
 [Appium] Attempting to find matching driver for automationName 'Mac2' and platformName 'mac'
 [Appium] The 'mac2' driver was installed and matched caps.
-[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver
+[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/.appium/node_modules/appium-mac2-driver
 [AppiumDriver@d1e9] Appium v3.8.0 creating new Mac2Driver (v4.5.0) session
 [AppiumDriver@d1e9] Checking BaseDriver versions for Appium and Mac2Driver
 [AppiumDriver@d1e9] Appium's BaseDriver version is 10.8.1
@@ -198,10 +198,10 @@ dbug Appium Creating hash file directory: /Users/ltuser/foreman/mac-dmg-appium-s
 [d3295f0d][HTTP] <-- DELETE /session/d3295f0d-1b9d-42c0-b96a-18b53707f178 200 2 ms - 14
 [HTTP] --> GET /status {}
 [HTTP] <-- GET /status 200 0 ms - 110
-[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
+[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
 [Appium] Attempting to find matching driver for automationName 'Mac2' and platformName 'mac'
 [Appium] The 'mac2' driver was installed and matched caps.
-[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver
+[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-hyperexecute-sample/.appium/node_modules/appium-mac2-driver
 [AppiumDriver@d1e9] Appium v3.8.0 creating new Mac2Driver (v4.5.0) session
 [AppiumDriver@d1e9] Checking BaseDriver versions for Appium and Mac2Driver
 [AppiumDriver@d1e9] Appium's BaseDriver version is 10.8.1
