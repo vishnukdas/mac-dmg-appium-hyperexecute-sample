@@ -1,7 +1,7 @@
 # Automating a macOS `.dmg` app on HyperExecute
 
 This repo is a working example of **testing a native macOS desktop app, delivered as a `.dmg`,
-on HyperExecute**. It uses Java + TestNG + Appium Mac2, and it passes end to end on HyperExecute's
+on [HyperExecute](https://www.testmuai.com/support/docs/getting-started-with-hyperexecute/)**. It uses Java + TestNG + Appium Mac2, and it passes end to end on HyperExecute's
 macOS Tahoe runners.
 
 In one job, HyperExecute:
@@ -20,6 +20,16 @@ In one job, HyperExecute:
  mount .dmg → copy .app → detach                                                     screen recording
 ```
 
+**HyperExecute docs used in this repo:**
+[Getting started](https://www.testmuai.com/support/docs/getting-started-with-hyperexecute/) ·
+[CLI](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/) ·
+[YAML reference](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/) ·
+[Matrix strategy](https://www.testmuai.com/support/docs/hyperexecute-matrix-multiplexing-strategy/) ·
+[Background services](https://www.testmuai.com/support/docs/hyperexecute-background-services/) ·
+[Caching](https://www.testmuai.com/support/docs/hyperexecute-how-smart-caching-boosts-tests-speed/) ·
+[Artifacts](https://www.testmuai.com/support/docs/hyperexecute-artifacts/) ·
+[GitHub Actions](https://www.testmuai.com/support/docs/github-actions-with-hyperexecute/)
+
 ---
 
 ## What this repo shows
@@ -29,7 +39,7 @@ In one job, HyperExecute:
 | **App delivery** | Both ways of getting a DMG into the job: built inside the job (`scripts/build-sample-dmg.sh`) and downloaded from a URL in `pre` |
 | **Apps under test** | `DMGSampleApp`: a small native AppKit app included in the repo. **MarkText**: a real third-party Electron app ([marktext/marktext](https://github.com/marktext/marktext) v0.23.0) |
 | **Automation** | Appium 3.8 + `mac2` driver 4.5 (XCTest / WebDriverAgentMac), Java client 10, TestNG 7 |
-| **HyperExecute features** | `runson: mac26`, matrix (one VM per suite), `background` service, cache, screen recording, artifacts |
+| **HyperExecute features** | [`runson`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#runson)`: mac26`, [matrix](https://www.testmuai.com/support/docs/hyperexecute-matrix-multiplexing-strategy/) (one VM per suite), [`background`](https://www.testmuai.com/support/docs/hyperexecute-background-services/) service, [cache](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#cachekey), [screen recording](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#capturescreenrecordingforscenarios), [artifacts](https://www.testmuai.com/support/docs/hyperexecute-artifacts/) |
 | **Result** | 9/9 tests pass in about **3.5 minutes** for the whole job |
 
 ### The tests
@@ -56,8 +66,9 @@ The text typed into MarkText is
 ### 1. Prerequisites
 
 - A LambdaTest / TestMu AI account with HyperExecute access, and your **username and access key**
-  (shown in your profile / the HyperExecute dashboard).
-- The HyperExecute CLI in the repo root:
+  ([where to find them](https://www.testmuai.com/support/docs/hyperexecute-environment-variable-setup/)).
+- The [HyperExecute CLI](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#download-the-hyperexecute-cli) in the repo root (macOS shown; Linux and
+  Windows builds are on the same page):
 
   ```bash
   curl -O https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
@@ -76,6 +87,11 @@ export LT_ACCESS_KEY=<your access key>
   --config hyperexecute.yaml \
   --download-artifacts --download-logs --download-artifacts-path build/hye-artifacts/
 ```
+
+Flags: [`--user`](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#-u---user), [`--key`](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#-k---key), [`--config`](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#--config),
+[`--download-artifacts`](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#--download-artifacts), [`--download-logs`](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#--download-logs),
+[`--download-artifacts-path`](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#--download-artifacts-path). All flags are listed in the
+[CLI reference](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#hyperexecute-cli-supported-flags).
 
 The CLI prints a **Job Link** to the HyperExecute dashboard and streams each stage:
 
@@ -103,9 +119,12 @@ Cache Directories:
     Failed Tasks:                         0
 ```
 
-To check the YAML without starting a job, add `--validate`.
+To check the YAML without starting a job, add [`--validate`](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#--validate). For the meaning of
+`COMPLETED` and the other job and task states, see [HyperExecute Status](https://www.testmuai.com/support/docs/hyperexecute-status/).
 
 ### 3. What you get back
+
+See [Job Artifacts](https://www.testmuai.com/support/docs/hyperexecute-artifacts/) for how artifacts are collected and viewed.
 
 | Where | What |
 |---|---|
@@ -129,13 +148,13 @@ showing macOS 26.3.1, Xcode 26.2 and Automation Mode being enabled:
 
 ![Scenario log with test steps](docs/images/hye-test-steps.jpg)
 
-**Background Services: Appium.** Open it with the icon next to the green ✔ at the top right of the
+**[Background Services](https://www.testmuai.com/support/docs/hyperexecute-background-services/): Appium.** Open it with the icon next to the green ✔ at the top right of the
 task. The "Error" count under *Log Highlights* is the tests polling for elements while the app is
 still rendering (`no such element` replies); those are expected and are not failures.
 
 ![Background Services with Appium log](docs/images/hye-background-appium.jpg)
 
-**Screen recording.** The camera icon on the scenario opens the video of the runner's screen. This
+**Screen recording** ([`captureScreenRecordingForScenarios`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#capturescreenrecordingforscenarios)). The camera icon on the scenario opens the video of the runner's screen. This
 frame, 50s in, shows the **Window** menu open on **Zoom In** while the text gets bigger. The first
 part of the video shows just the desktop while Maven starts and Mac2 builds WebDriverAgentMac.
 
@@ -228,7 +247,7 @@ duration, followed by the usual Maven summary
 
 ### Appium server log (background)
 
-Appium runs as a HyperExecute `background` service, so its console gets its own log on the task
+Appium runs as a HyperExecute [`background`](https://www.testmuai.com/support/docs/hyperexecute-background-services/) service, so its console gets its own log on the task
 ([`docs/sample-logs/appium-background.log`](docs/sample-logs/appium-background.log)). It also writes
 `build/test-results/appium.log`, which is uploaded as an artifact.
 
@@ -257,12 +276,15 @@ Later sessions take 4–6s.
 
 ## `hyperexecute.yaml` explained
 
-The full file is in the repo. Each part:
+The full file is in the repo. Each part is shown below with a link to its entry in the
+[HyperExecute YAML reference](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/).
 
 ```yaml
 version: 0.1
 runson: mac26          # macOS Tahoe (26.x), arm64, with full Xcode
 ```
+
+Docs: [`version`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#version), [`runson`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#runson).
 
 **Use `mac26`.** Mac2 builds WebDriverAgentMac with `xcodebuild`, so it needs **full Xcode**, not just
 the Command Line Tools. The plain `mac` image (macOS 15.3) has only the Command Line Tools, and Mac2
@@ -274,6 +296,9 @@ matrix:
   suite: ["sample-app.xml", "marktext.xml"]
 ```
 
+Docs: [`concurrency`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#concurrency), [`matrix`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#matrix),
+[Matrix strategy](https://www.testmuai.com/support/docs/hyperexecute-matrix-multiplexing-strategy/).
+
 Each suite gets its own VM. Mac2 drives the real desktop (mouse, keyboard, focus), so two GUI apps
 must not run on the same machine at once.
 
@@ -281,6 +306,9 @@ must not run on the same machine at once.
 captureScreenRecordingForScenarios: true   # video of the runner's desktop per scenario
 scenarioCommandStatusOnly: true            # task status = exit code of the test command
 ```
+
+Docs: [`captureScreenRecordingForScenarios`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#capturescreenrecordingforscenarios),
+[`scenarioCommandStatusOnly`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#scenariocommandstatusonly).
 
 ```yaml
 runtime:
@@ -291,6 +319,9 @@ env:
   APPIUM_HOME: ./.appium                          # driver lives in the project (and in the cache)
   MAVEN_OPTS: -Dmaven.repo.local=.m2/repository   # Maven repo in the project (and in the cache)
 ```
+
+Docs: [`runtime`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#runtime), [`env`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#env),
+[supported languages and versions per OS](https://www.testmuai.com/support/docs/hyperexecute-supported-languages-and-packages/).
 
 ```yaml
 pre:
@@ -305,6 +336,8 @@ pre:
   - mkdir -p build/test-results
 ```
 
+Docs: [`pre`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#pre). If a `pre` command fails, see [Pre Steps Errors](https://www.testmuai.com/support/docs/hyperexecute-pre-steps-error/).
+
 - **Automation Mode** is off on the image. XCTest needs it, and without this step the session waits
   for a password prompt that nobody can answer. Passwordless `sudo` is available on the runner.
 - **`install-dmg.sh`** mounts the DMG read-only, copies the `.app` into `build/installed/`, removes the
@@ -315,6 +348,8 @@ background:
   - npx appium --address 127.0.0.1 --port 4723 --log build/test-results/appium.log --log-level info:debug
 ```
 
+Docs: [`background`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#background), [Background Services](https://www.testmuai.com/support/docs/hyperexecute-background-services/).
+
 Starts after `pre` and keeps running for the whole task. The tests wait for Appium's `/status`
 before opening a session, so it doesn't matter if it is still booting.
 
@@ -322,6 +357,9 @@ before opening a session, so it doesn't matter if it is still booting.
 cacheKey: '{{ checksum "package-lock.json" }}-{{ checksum "pom.xml" }}'
 cacheDirectories: [node_modules, .appium, .m2]
 ```
+
+Docs: [`cacheKey`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#cachekey), [`cacheDirectories`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#cachedirectories),
+[Smart Caching](https://www.testmuai.com/support/docs/hyperexecute-how-smart-caching-boosts-tests-speed/).
 
 On a cache hit, `pre` drops from about 55–70s to about 20–40s. The rest of `pre` is building the
 sample DMG and downloading MarkText.
@@ -335,16 +373,22 @@ uploadArtefacts:
     path: [build/test-results/**, target/surefire-reports/**]
 ```
 
+Docs: [`testSuites`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#testsuites), [`uploadArtefacts`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#uploadartefacts),
+[Job Artifacts](https://www.testmuai.com/support/docs/hyperexecute-artifacts/).
+
+Files listed in `.hyperexecuteignore` (build output, `node_modules`, `docs/`, ...) are left out of the
+upload; see [Ignore Unnecessary Files in your Payload](https://www.testmuai.com/support/docs/hyperexecute-gitignore/).
+
 ### Run from GitHub Actions
 
 [`.github/workflows/hyperexecute.yml`](.github/workflows/hyperexecute.yml) runs the same job from
-GitHub. No secrets need to be set up; the credentials are entered when you start it:
+GitHub (see also [GitHub Actions Integration](https://www.testmuai.com/support/docs/github-actions-with-hyperexecute/)). No secrets need to be set up; the credentials are entered when you start it:
 
 1. Fork the repo (or use it directly if you have write access).
 2. Go to **Actions → HyperExecute macOS tests → Run workflow**.
 3. Enter your **LambdaTest username** and **access key**, and click **Run workflow**.
 
-The workflow downloads the Linux CLI on an `ubuntu-latest` runner, validates the YAML, runs the job
+The workflow downloads the [Linux CLI](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#download-the-hyperexecute-cli) on an `ubuntu-latest` runner, validates the YAML, runs the job
 and streams it into the Actions log. The tests themselves run on HyperExecute's macOS runners.
 The credentials are masked in the logs. The HyperExecute job link is added to the run summary, and
 the downloaded logs and artifacts are uploaded as the `hyperexecute-results` artifact.
@@ -356,12 +400,13 @@ the downloaded logs and artifacts are uploaded as the `hyperexecute-results` art
 1. **Get your DMG into the job.** Use either option:
    - Download it in `pre`:
      `./scripts/install-dmg.sh https://your.cdn/YourApp.dmg build/installed build/installed-app.env`.
-     Use a pre-signed URL if it's private, and keep the token in a HyperExecute secret.
+     Use a pre-signed URL if it's private, and keep the token in a
+     [HyperExecute secret](https://www.testmuai.com/support/docs/hyperexecute-how-to-save-and-manage-secrets/).
    - Or build it in `pre` (replace `scripts/build-sample-dmg.sh`) and install the local file.
 2. **Write tests** that extend `BaseMacTest`. The app path and bundle id are read from the env file,
    so tests don't hard-code them. If you have more than one app, override `installedAppEnv()`
    (see `MarkTextTest`).
-3. **Add a suite XML** under `suites/` and add it to the `matrix` in `hyperexecute.yaml`.
+3. **Add a suite XML** under `suites/` and add it to the [`matrix`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#matrix) in `hyperexecute.yaml`.
 4. **Use `step("...")`** in tests or helpers to get readable step logs.
 
 Tips for locators:
@@ -396,7 +441,9 @@ npm run install-driver      # mac2 driver into ./.appium
 
 | Path | Purpose |
 |---|---|
-| `hyperexecute.yaml` | HyperExecute job definition |
+| `hyperexecute.yaml` | HyperExecute job definition ([YAML reference](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/)) |
+| `.hyperexecuteignore` | Files left out of the job upload ([docs](https://www.testmuai.com/support/docs/hyperexecute-gitignore/)) |
+| `.github/workflows/hyperexecute.yml` | GitHub Actions workflow that runs the job ([docs](https://www.testmuai.com/support/docs/github-actions-with-hyperexecute/)) |
 | `scripts/install-dmg.sh` | Mount a DMG (path or URL), copy the `.app`, strip quarantine, write the env file |
 | `scripts/build-sample-dmg.sh` | Build `DMGSampleApp.app` with `swiftc` and package `dist/DMGSampleApp.dmg` |
 | `scripts/run-local.sh` | One-command local run |
@@ -411,11 +458,16 @@ npm run install-driver      # mac2 driver into ./.appium
 
 ## Troubleshooting
 
+HyperExecute's own guides: [Debug your CLI Errors](https://www.testmuai.com/support/docs/hyperexecute-cli-error/) ·
+[Pre Steps Errors](https://www.testmuai.com/support/docs/hyperexecute-pre-steps-error/) ·
+[Scenario Steps Errors](https://www.testmuai.com/support/docs/hyperexecute-scenario-steps-error/) ·
+[HyperExecute FAQs](https://www.testmuai.com/support/docs/hyperexecute-faqs/). The table below covers what came up while building this repo.
+
 | Symptom | Cause | Fix |
 |---|---|---|
-| `xcodebuild ... WebDriverAgentMac exited with code 1` | Runner has only the Command Line Tools | Use `runson: mac26` (full Xcode) |
+| `xcodebuild ... WebDriverAgentMac exited with code 1` | Runner has only the Command Line Tools | Use [`runson`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#runson)`: mac26` (full Xcode) |
 | Session hangs, then times out | Automation Mode prompt | Keep the `automationmodetool enable-automationmode-without-authentication` step in `pre` |
-| `TypeError: tracingChannel is not a function` during `npm ci` | Runner Node 18 is too old for Appium 3 | `runtime: { language: node, version: "22" }` |
+| `TypeError: tracingChannel is not a function` during `npm ci` | Runner Node 18 is too old for Appium 3 | [`runtime`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#runtime)`: { language: node, version: "22" }` |
 | `Source option 5 is no longer supported` | Maven 3.8 on the runner defaults to an old compiler plugin | `maven-compiler-plugin` is pinned to 3.13.0 in `pom.xml` |
 | `&&` / `\|\|` are passed as arguments | HyperExecute doesn't run commands through a shell | Wrap them in `bash -c '...'` |
 | A `$VARIABLE` in a command is empty | HyperExecute substitutes `$VARS` in commands itself; only matrix values are filled | Write the value directly in the command, or read it inside a script |
@@ -424,5 +476,5 @@ npm run install-driver      # mac2 driver into ./.appium
 
 ## Runner facts (`mac26`, verified October 2026)
 
-macOS 26.3.1 (Tahoe), arm64, Xcode 26.2, Java 17.0.14, Maven 3.8.8, Node 22 (via `runtime`),
+macOS 26.3.1 (Tahoe), arm64, Xcode 26.2, Java 17.0.14, Maven 3.8.8, Node 22 (via [`runtime`](https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/#runtime)),
 user `ltuser` with passwordless `sudo`. Automation Mode is off by default and is turned on in `pre`.
