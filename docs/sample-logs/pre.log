@@ -1,0 +1,38 @@
+******************* bash -c 'sw_vers; uname -m; xcodebuild -version || echo "WARN xcodebuild not available; Mac2 needs full Xcode"; automationmodetool || true' *******************
+ProductName:		macOS
+ProductVersion:		26.3.1
+BuildVersion:		25D2128
+arm64
+Xcode 26.2
+Build version 17C52
+Automation Mode is disabled.
+This device requires user authentication to enable Automation Mode.
+******************* bash -c 'echo "--- Xcode bundles:"; ls -d /Applications/Xcode*.app 2>/dev/null || echo none; xcode-select -p; sudo -n true 2>/dev/null && echo SUDO=passwordless || echo SUDO=unavailable; node -v; java -version 2>&1 | head -1; mvn -v 2>&1 | head -1; whoami' *******************
+--- Xcode bundles:
+/Applications/Xcode.app
+/Applications/Xcode.app/Contents/Developer
+SUDO=passwordless
+v22.23.3
+openjdk version "17.0.14" 2025-01-21
+Apache Maven 3.8.8 (4c87b05d9aedce574290d1acc98575ed5eb6cd39)
+ltuser
+******************* bash -c 'sudo -n automationmodetool enable-automationmode-without-authentication || echo "WARN could not enable Automation Mode"; automationmodetool || true' *******************
+Enter the password for user 'root': Setting up machine to allow Automation Mode without requiring user authentication... succeeded.
+Automation Mode is disabled.
+This device DOES NOT REQUIRE user authentication to enable Automation Mode.
+******************* bash -c '[ -x node_modules/.bin/appium ] || npm ci --no-fund --no-audit' *******************
+******************* bash -c 'npx appium driver list --installed --json 2>/dev/null | grep -q mac2 || npx appium driver install mac2' *******************
+******************* mvn -q -DskipTests test-compile *******************
+******************* ./scripts/build-sample-dmg.sh *******************
+/Users/ltuser/foreman/mac-dmg-appium-sample/build/sample-app/DMGSampleApp.app: replacing existing signature
+Built /Users/ltuser/foreman/mac-dmg-appium-sample/dist/DMGSampleApp.dmg
+******************* ./scripts/install-dmg.sh dist/DMGSampleApp.dmg build/installed build/installed-app.env *******************
+Installed /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app (com.testmu.samples.DMGSampleApp)
+******************* ./scripts/install-dmg.sh https://github.com/marktext/marktext/releases/download/v0.23.0/marktext-mac-arm64-0.23.0.dmg build/installed build/installed-marktext.env *******************
+Downloading https://github.com/marktext/marktext/releases/download/v0.23.0/marktext-mac-arm64-0.23.0.dmg
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 18  150M   18 28.4M    0     0  27.7M      0  0:00:05  0:00:01  0:00:04 27.7M 35  150M   35 53.4M    0     0  26.4M      0  0:00:05  0:00:02  0:00:03 25.0M 56  150M   56 84.4M    0     0  27.9M      0  0:00:05  0:00:03  0:00:02 28.0M 74  150M   74  111M    0     0  27.7M      0  0:00:05  0:00:04  0:00:01 27.7M 87  150M   87  132M    0     0  26.2M      0  0:00:05  0:00:05 --:--:-- 25.9M100  150M  100  150M    0     0  25.1M      0  0:00:05  0:00:05 --:--:-- 24.6M
+Installed /Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/MarkText.app (com.github.marktext.marktext)
+******************* mkdir -p build/test-results *******************

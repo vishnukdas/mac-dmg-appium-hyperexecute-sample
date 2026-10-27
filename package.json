@@ -1,0 +1,11 @@
+{
+  "name": "mac-dmg-appium-sample",
+  "private": true,
+  "scripts": {
+    "appium": "APPIUM_HOME=./.appium appium --address 127.0.0.1 --port 4723",
+    "install-driver": "APPIUM_HOME=./.appium appium driver install mac2"
+  },
+  "devDependencies": {
+    "appium": "^3.0.0"
+  }
+}

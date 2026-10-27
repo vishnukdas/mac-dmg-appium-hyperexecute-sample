@@ -1,0 +1,60 @@
+name: HyperExecute macOS tests
+
+# Runs hyperexecute.yaml on HyperExecute (macOS Tahoe runners). The GitHub runner only hosts the
+# CLI: it uploads the repo, streams the job, and downloads logs and artifacts afterwards.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+
+concurrency:
+  group: hyperexecute-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  hyperexecute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      LT_USERNAME: ${{ secrets.LT_USERNAME }}
+      LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download HyperExecute CLI
+        run: |
+          curl -fsSL -o hyperexecute https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
+          chmod +x hyperexecute
+          ./hyperexecute --version
+
+      - name: Validate hyperexecute.yaml
+        run: ./hyperexecute --user "$LT_USERNAME" --key "$LT_ACCESS_KEY" --config hyperexecute.yaml --validate
+
+      - name: Run tests on HyperExecute
+        run: |
+          set -o pipefail
+          ./hyperexecute --user "$LT_USERNAME" --key "$LT_ACCESS_KEY" --config hyperexecute.yaml \
+            --download-artifacts --download-logs --download-artifacts-path build/hye-artifacts/ \
+            2>&1 | tee hyperexecute-run.log
+
+      - name: Add job link to summary
+        if: always()
+        run: |
+          link=$(grep -m1 -o 'https://hyperexecute.lambdatest.com/hyperexecute/task?jobId=[A-Za-z0-9-]*' hyperexecute-run.log || true)
+          echo "### HyperExecute job" >> "$GITHUB_STEP_SUMMARY"
+          echo "${link:-Job link not found; see the run log.}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hyperexecute-results
+          path: |
+            build/hye-artifacts/
+            logs/
+            hyperexecute-run.log
+          if-no-files-found: warn

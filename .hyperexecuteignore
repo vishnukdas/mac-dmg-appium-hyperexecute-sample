@@ -1,0 +1,17 @@
+node_modules/
+.appium/
+target/
+build/
+dist/
+*.dmg
+hyperexecute
+hyperexecute-cli.log
+*.zip
+.m2/
+logs/
+hyperexecute-analyze.log
+hyperexecuteupdate
+docs/
+.github/
+hyperexecute-run.log
+.hyperexecute/

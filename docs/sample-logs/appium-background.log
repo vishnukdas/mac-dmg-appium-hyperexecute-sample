@@ -1,0 +1,246 @@
+******************* npx appium --address 127.0.0.1 --port 4723 --log build/test-results/appium.log --log-level info:debug *******************
+dbug Appium Creating hash file directory: /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/.cache/appium
+[Appium] Welcome to Appium v3.8.0
+[Appium] Non-default server args:
+[Appium] { address: '127.0.0.1', loglevel: 'info:debug' }
+[Appium] Attempting to load driver mac2...
+[Appium] Appium REST http interface listener started on http://127.0.0.1:4723
+[Appium] Available drivers:
+[Appium]   - mac2@4.5.0 (automationName 'Mac2')
+[Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+[HTTP] --> GET /status {}
+[HTTP] <-- GET /status 200 3 ms - 110
+[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
+[Appium] Attempting to find matching driver for automationName 'Mac2' and platformName 'mac'
+[Appium] The 'mac2' driver was installed and matched caps.
+[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver
+[AppiumDriver@d1e9] Appium v3.8.0 creating new Mac2Driver (v4.5.0) session
+[AppiumDriver@d1e9] Checking BaseDriver versions for Appium and Mac2Driver
+[AppiumDriver@d1e9] Appium's BaseDriver version is 10.8.1
+[AppiumDriver@d1e9] Mac2Driver's BaseDriver version is 10.8.1
+[d4412ee8][Mac2Driver@bace] Session created with session id: d4412ee8-3670-4c8c-8189-50d8611540d9
+[d4412ee8][BaseDriver] Subscribing bacef20d-0efb-49eb-93ca-062974d1817c to topic 'mac2:sessionClaimed'
+[d4412ee8][BaseDriver] Subscribing bacef20d-0efb-49eb-93ca-062974d1817c to topic 'mac2:sessionContended'
+[d4412ee8][BaseDriver] Subscribing bacef20d-0efb-49eb-93ca-062974d1817c to topic 'mac2:sessionReleased'
+[d4412ee8][BaseDriver] Unsubscribing bacef20d-0efb-49eb-93ca-062974d1817c from topic 'mac2:sessionContended'
+[d4412ee8][BaseDriver] Unsubscribing bacef20d-0efb-49eb-93ca-062974d1817c from topic 'mac2:sessionReleased'
+[d4412ee8][WebDriverAgentMac] There is no need to perform the project cleanup. A fresh install has been detected
+[d4412ee8][WebDriverAgentMac] Mac2Driver host process logging is disabled. All the xcodebuild output is going to be suppressed. Set the 'showServerLogs' capability to 'true' if this is an undesired behavior
+[d4412ee8][WebDriverAgentMac] Starting Mac2Driver host process: xcodebuild build-for-testing test-without-building -project /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver/WebDriverAgentMac/WebDriverAgentMac.xcodeproj -scheme WebDriverAgentRunner COMPILER_INDEX_STORE_ENABLE\=NO
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WD Proxy] connect ECONNREFUSED 127.0.0.1:10100
+[d4412ee8][WebDriverAgentMac] The host process is ready within 12116ms
+[d4412ee8][WD Proxy] Determined the downstream protocol as 'W3C'
+[d4412ee8][AppiumDriver@d1e9] New Mac2Driver session created successfully, session d4412ee8-3670-4c8c-8189-50d8611540d9 added to master session list
+[HTTP] <-- POST /session 200 18496 ms - 312
+[d4412ee8][HTTP] --> POST /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element {"using":"-ios class chain","value":"**/XCUIElementTypeWindow[`title == \"DMG Sample App\"`]"}
+[d4412ee8][HTTP] <-- POST /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element 200 74 ms - 137
+[d4412ee8][HTTP] --> GET /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element/823FD53D-BEAE-4F87-B530-F93BD9AA75AF/displayed {}
+[d4412ee8][Mac2Driver@bace] Driver proxy active, passing request on via HTTP proxy
+[d4412ee8][WD Proxy] Replacing sessionId 47707E00-E9F8-4692-B9EB-64C557F2C0D5 with d4412ee8-3670-4c8c-8189-50d8611540d9
+[d4412ee8][HTTP] <-- GET /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element/823FD53D-BEAE-4F87-B530-F93BD9AA75AF/displayed 200 33 ms - 14
+[d4412ee8][HTTP] --> POST /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element {"using":"accessibility id","value":"greetingLabel"}
+[d4412ee8][HTTP] <-- POST /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element 200 60 ms - 137
+[d4412ee8][HTTP] --> GET /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element/1FCE8B62-FDBE-4029-8E93-36EEB195D6D1/attribute/value {}
+[d4412ee8][Mac2Driver@bace] Driver proxy active, passing request on via HTTP proxy
+[d4412ee8][WD Proxy] Replacing sessionId 47707E00-E9F8-4692-B9EB-64C557F2C0D5 with d4412ee8-3670-4c8c-8189-50d8611540d9
+[d4412ee8][HTTP] <-- GET /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element/1FCE8B62-FDBE-4029-8E93-36EEB195D6D1/attribute/value 200 53 ms - 29
+[d4412ee8][HTTP] --> POST /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element {"using":"class name","value":"XCUIElementTypeWindow"}
+[d4412ee8][HTTP] <-- POST /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element 200 22 ms - 137
+[d4412ee8][HTTP] --> GET /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element/BBAEA447-C446-43D9-AE8F-72AFAE6B1AF1/screenshot {}
+[d4412ee8][Mac2Driver@bace] Driver proxy active, passing request on via HTTP proxy
+[d4412ee8][WD Proxy] Replacing sessionId 47707E00-E9F8-4692-B9EB-64C557F2C0D5 with d4412ee8-3670-4c8c-8189-50d8611540d9
+[d4412ee8][HTTP] <-- GET /session/d4412ee8-3670-4c8c-8189-50d8611540d9/element/BBAEA447-C446-43D9-AE8F-72AFAE6B1AF1/screenshot 200 150 ms - 24328
+[d4412ee8][HTTP] --> POST /session/d4412ee8-3670-4c8c-8189-50d8611540d9/execute/sync {"script":"macos: terminateApp","args":[{"bundleId":"com.testmu.samples.DMGSampleApp"}]}
+[d4412ee8][Mac2Driver@bace] Executing extension command 'macos: terminateApp'
+[d4412ee8][HTTP] <-- POST /session/d4412ee8-3670-4c8c-8189-50d8611540d9/execute/sync 200 1050 ms - 14
+[d4412ee8][HTTP] --> DELETE /session/d4412ee8-3670-4c8c-8189-50d8611540d9 {}
+[d4412ee8][BaseDriver] Unsubscribing bacef20d-0efb-49eb-93ca-062974d1817c from topic 'mac2:sessionClaimed'
+[d4412ee8][AppiumDriver@d1e9] Removing session d4412ee8-3670-4c8c-8189-50d8611540d9 from our master session list
+[d4412ee8][HTTP] <-- DELETE /session/d4412ee8-3670-4c8c-8189-50d8611540d9 200 3 ms - 14
+[HTTP] --> GET /status {}
+[HTTP] <-- GET /status 200 0 ms - 110
+[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
+[Appium] Attempting to find matching driver for automationName 'Mac2' and platformName 'mac'
+[Appium] The 'mac2' driver was installed and matched caps.
+[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver
+[AppiumDriver@d1e9] Appium v3.8.0 creating new Mac2Driver (v4.5.0) session
+[AppiumDriver@d1e9] Checking BaseDriver versions for Appium and Mac2Driver
+[AppiumDriver@d1e9] Appium's BaseDriver version is 10.8.1
+[AppiumDriver@d1e9] Mac2Driver's BaseDriver version is 10.8.1
+[846a03da][Mac2Driver@8a14] Session created with session id: 846a03da-65bb-4b18-be77-ee250ce05bad
+[846a03da][BaseDriver] Subscribing 8a1461e2-a62c-4ef5-be21-2cfb1a097112 to topic 'mac2:sessionClaimed'
+[846a03da][BaseDriver] Subscribing 8a1461e2-a62c-4ef5-be21-2cfb1a097112 to topic 'mac2:sessionContended'
+[846a03da][BaseDriver] Subscribing 8a1461e2-a62c-4ef5-be21-2cfb1a097112 to topic 'mac2:sessionReleased'
+[846a03da][BaseDriver] Unsubscribing 8a1461e2-a62c-4ef5-be21-2cfb1a097112 from topic 'mac2:sessionContended'
+[846a03da][BaseDriver] Unsubscribing 8a1461e2-a62c-4ef5-be21-2cfb1a097112 from topic 'mac2:sessionReleased'
+[846a03da][WebDriverAgentMac] The host process has already been listening. Proceeding with session creation
+[846a03da][WD Proxy] Determined the downstream protocol as 'W3C'
+[846a03da][AppiumDriver@d1e9] New Mac2Driver session created successfully, session 846a03da-65bb-4b18-be77-ee250ce05bad added to master session list
+[HTTP] <-- POST /session 200 4661 ms - 312
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element {"using":"accessibility id","value":"nameField"}
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element 200 71 ms - 137
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/2CB85607-D72A-4305-AABD-39FF5A93AE39/value {"id":"2CB85607-D72A-4305-AABD-39FF5A93AE39","text":"Sample User","value":["S","a","m","p","l","e"," ","U","s","e","r"]}
+[846a03da][Mac2Driver@8a14] Driver proxy active, passing request on via HTTP proxy
+[846a03da][WD Proxy] Replacing sessionId 64DE34E4-59C2-4622-87CA-ED4F893CBCDC with 846a03da-65bb-4b18-be77-ee250ce05bad
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/2CB85607-D72A-4305-AABD-39FF5A93AE39/value 200 562 ms - 14
+[846a03da][HTTP] --> GET /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/2CB85607-D72A-4305-AABD-39FF5A93AE39/attribute/value {}
+[846a03da][Mac2Driver@8a14] Driver proxy active, passing request on via HTTP proxy
+[846a03da][WD Proxy] Replacing sessionId 64DE34E4-59C2-4622-87CA-ED4F893CBCDC with 846a03da-65bb-4b18-be77-ee250ce05bad
+[846a03da][HTTP] <-- GET /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/2CB85607-D72A-4305-AABD-39FF5A93AE39/attribute/value 200 44 ms - 23
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element {"using":"accessibility id","value":"greetButton"}
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element 200 38 ms - 137
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/E6A10140-B410-4A8A-AEAF-75118A55B545/click {"id":"E6A10140-B410-4A8A-AEAF-75118A55B545"}
+[846a03da][Mac2Driver@8a14] Driver proxy active, passing request on via HTTP proxy
+[846a03da][WD Proxy] Replacing sessionId 64DE34E4-59C2-4622-87CA-ED4F893CBCDC with 846a03da-65bb-4b18-be77-ee250ce05bad
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/E6A10140-B410-4A8A-AEAF-75118A55B545/click 200 376 ms - 14
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element {"using":"accessibility id","value":"clearButton"}
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element 200 39 ms - 137
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/6AF8992C-8B44-4A06-AE02-878E192B8A0C/click {"id":"6AF8992C-8B44-4A06-AE02-878E192B8A0C"}
+[846a03da][Mac2Driver@8a14] Driver proxy active, passing request on via HTTP proxy
+[846a03da][WD Proxy] Replacing sessionId 64DE34E4-59C2-4622-87CA-ED4F893CBCDC with 846a03da-65bb-4b18-be77-ee250ce05bad
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/6AF8992C-8B44-4A06-AE02-878E192B8A0C/click 200 389 ms - 14
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element {"using":"accessibility id","value":"nameField"}
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element 200 40 ms - 137
+[846a03da][HTTP] --> GET /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/CB19B738-73AE-4F02-91FF-11B0EEC7036E/attribute/value {}
+[846a03da][Mac2Driver@8a14] Driver proxy active, passing request on via HTTP proxy
+[846a03da][WD Proxy] Replacing sessionId 64DE34E4-59C2-4622-87CA-ED4F893CBCDC with 846a03da-65bb-4b18-be77-ee250ce05bad
+[846a03da][HTTP] <-- GET /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/CB19B738-73AE-4F02-91FF-11B0EEC7036E/attribute/value 200 37 ms - 12
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element {"using":"accessibility id","value":"greetingLabel"}
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element 200 37 ms - 137
+[846a03da][HTTP] --> GET /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/8A3AD625-5452-4E13-9BFE-BBE730B12201/attribute/value {}
+[846a03da][Mac2Driver@8a14] Driver proxy active, passing request on via HTTP proxy
+[846a03da][WD Proxy] Replacing sessionId 64DE34E4-59C2-4622-87CA-ED4F893CBCDC with 846a03da-65bb-4b18-be77-ee250ce05bad
+[846a03da][HTTP] <-- GET /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/8A3AD625-5452-4E13-9BFE-BBE730B12201/attribute/value 200 40 ms - 29
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element {"using":"class name","value":"XCUIElementTypeWindow"}
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/element 200 14 ms - 137
+[846a03da][HTTP] --> GET /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/E62EC3F0-8DBF-4376-BBEB-12B2EBEDA8D9/screenshot {}
+[846a03da][Mac2Driver@8a14] Driver proxy active, passing request on via HTTP proxy
+[846a03da][WD Proxy] Replacing sessionId 64DE34E4-59C2-4622-87CA-ED4F893CBCDC with 846a03da-65bb-4b18-be77-ee250ce05bad
+[846a03da][HTTP] <-- GET /session/846a03da-65bb-4b18-be77-ee250ce05bad/element/E62EC3F0-8DBF-4376-BBEB-12B2EBEDA8D9/screenshot 200 103 ms - 24152
+[846a03da][HTTP] --> POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/execute/sync {"script":"macos: terminateApp","args":[{"bundleId":"com.testmu.samples.DMGSampleApp"}]}
+[846a03da][Mac2Driver@8a14] Executing extension command 'macos: terminateApp'
+[846a03da][HTTP] <-- POST /session/846a03da-65bb-4b18-be77-ee250ce05bad/execute/sync 200 1044 ms - 14
+[846a03da][HTTP] --> DELETE /session/846a03da-65bb-4b18-be77-ee250ce05bad {}
+[846a03da][BaseDriver] Unsubscribing 8a1461e2-a62c-4ef5-be21-2cfb1a097112 from topic 'mac2:sessionClaimed'
+[846a03da][AppiumDriver@d1e9] Removing session 846a03da-65bb-4b18-be77-ee250ce05bad from our master session list
+[846a03da][HTTP] <-- DELETE /session/846a03da-65bb-4b18-be77-ee250ce05bad 200 2 ms - 14
+[HTTP] --> GET /status {}
+[HTTP] <-- GET /status 200 0 ms - 110
+[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
+[Appium] Attempting to find matching driver for automationName 'Mac2' and platformName 'mac'
+[Appium] The 'mac2' driver was installed and matched caps.
+[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver
+[AppiumDriver@d1e9] Appium v3.8.0 creating new Mac2Driver (v4.5.0) session
+[AppiumDriver@d1e9] Checking BaseDriver versions for Appium and Mac2Driver
+[AppiumDriver@d1e9] Appium's BaseDriver version is 10.8.1
+[AppiumDriver@d1e9] Mac2Driver's BaseDriver version is 10.8.1
+[d3295f0d][Mac2Driver@7adb] Session created with session id: d3295f0d-1b9d-42c0-b96a-18b53707f178
+[d3295f0d][BaseDriver] Subscribing 7adb6216-cb73-4350-a4a6-d9ba811ee0f6 to topic 'mac2:sessionClaimed'
+[d3295f0d][BaseDriver] Subscribing 7adb6216-cb73-4350-a4a6-d9ba811ee0f6 to topic 'mac2:sessionContended'
+[d3295f0d][BaseDriver] Subscribing 7adb6216-cb73-4350-a4a6-d9ba811ee0f6 to topic 'mac2:sessionReleased'
+[d3295f0d][BaseDriver] Unsubscribing 7adb6216-cb73-4350-a4a6-d9ba811ee0f6 from topic 'mac2:sessionContended'
+[d3295f0d][BaseDriver] Unsubscribing 7adb6216-cb73-4350-a4a6-d9ba811ee0f6 from topic 'mac2:sessionReleased'
+[d3295f0d][WebDriverAgentMac] The host process has already been listening. Proceeding with session creation
+[d3295f0d][WD Proxy] Determined the downstream protocol as 'W3C'
+[d3295f0d][AppiumDriver@d1e9] New Mac2Driver session created successfully, session d3295f0d-1b9d-42c0-b96a-18b53707f178 added to master session list
+[HTTP] <-- POST /session 200 4121 ms - 312
+[d3295f0d][HTTP] --> POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element {"using":"accessibility id","value":"nameField"}
+[d3295f0d][HTTP] <-- POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element 200 65 ms - 137
+[d3295f0d][HTTP] --> POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/332D7295-2C7F-4694-84A3-D4DA7A9E6ED5/value {"id":"332D7295-2C7F-4694-84A3-D4DA7A9E6ED5","text":"Alex","value":["A","l","e","x"]}
+[d3295f0d][Mac2Driver@7adb] Driver proxy active, passing request on via HTTP proxy
+[d3295f0d][WD Proxy] Replacing sessionId 3AD0215C-AB4E-44D0-8496-E1E9A2462C15 with d3295f0d-1b9d-42c0-b96a-18b53707f178
+[d3295f0d][HTTP] <-- POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/332D7295-2C7F-4694-84A3-D4DA7A9E6ED5/value 200 244 ms - 14
+[d3295f0d][HTTP] --> GET /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/332D7295-2C7F-4694-84A3-D4DA7A9E6ED5/attribute/value {}
+[d3295f0d][Mac2Driver@7adb] Driver proxy active, passing request on via HTTP proxy
+[d3295f0d][WD Proxy] Replacing sessionId 3AD0215C-AB4E-44D0-8496-E1E9A2462C15 with d3295f0d-1b9d-42c0-b96a-18b53707f178
+[d3295f0d][HTTP] <-- GET /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/332D7295-2C7F-4694-84A3-D4DA7A9E6ED5/attribute/value 200 46 ms - 16
+[d3295f0d][HTTP] --> POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element {"using":"accessibility id","value":"greetButton"}
+[d3295f0d][HTTP] <-- POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element 200 39 ms - 137
+[d3295f0d][HTTP] --> POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/4629E4F6-3B98-41CA-8E29-17E5DC7E69FD/click {"id":"4629E4F6-3B98-41CA-8E29-17E5DC7E69FD"}
+[d3295f0d][Mac2Driver@7adb] Driver proxy active, passing request on via HTTP proxy
+[d3295f0d][WD Proxy] Replacing sessionId 3AD0215C-AB4E-44D0-8496-E1E9A2462C15 with d3295f0d-1b9d-42c0-b96a-18b53707f178
+[d3295f0d][HTTP] <-- POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/4629E4F6-3B98-41CA-8E29-17E5DC7E69FD/click 200 424 ms - 14
+[d3295f0d][HTTP] --> POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element {"using":"accessibility id","value":"greetingLabel"}
+[d3295f0d][HTTP] <-- POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element 200 39 ms - 137
+[d3295f0d][HTTP] --> GET /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/77FD3BE4-0ACA-4E42-84B2-37D2C94A90C9/attribute/value {}
+[d3295f0d][Mac2Driver@7adb] Driver proxy active, passing request on via HTTP proxy
+[d3295f0d][WD Proxy] Replacing sessionId 3AD0215C-AB4E-44D0-8496-E1E9A2462C15 with d3295f0d-1b9d-42c0-b96a-18b53707f178
+[d3295f0d][HTTP] <-- GET /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/77FD3BE4-0ACA-4E42-84B2-37D2C94A90C9/attribute/value 200 40 ms - 24
+[d3295f0d][HTTP] --> POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element {"using":"accessibility id","value":"counterLabel"}
+[d3295f0d][HTTP] <-- POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element 200 38 ms - 137
+[d3295f0d][HTTP] --> GET /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/85FD202C-7CAE-4A64-9373-8EC997757C80/attribute/value {}
+[d3295f0d][Mac2Driver@7adb] Driver proxy active, passing request on via HTTP proxy
+[d3295f0d][WD Proxy] Replacing sessionId 3AD0215C-AB4E-44D0-8496-E1E9A2462C15 with d3295f0d-1b9d-42c0-b96a-18b53707f178
+[d3295f0d][HTTP] <-- GET /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/85FD202C-7CAE-4A64-9373-8EC997757C80/attribute/value 200 41 ms - 24
+[d3295f0d][HTTP] --> POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element {"using":"class name","value":"XCUIElementTypeWindow"}
+[d3295f0d][HTTP] <-- POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element 200 15 ms - 137
+[d3295f0d][HTTP] --> GET /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/AE239383-3A83-4B13-8043-BA58226DB44C/screenshot {}
+[d3295f0d][Mac2Driver@7adb] Driver proxy active, passing request on via HTTP proxy
+[d3295f0d][WD Proxy] Replacing sessionId 3AD0215C-AB4E-44D0-8496-E1E9A2462C15 with d3295f0d-1b9d-42c0-b96a-18b53707f178
+[d3295f0d][HTTP] <-- GET /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/element/AE239383-3A83-4B13-8043-BA58226DB44C/screenshot 200 52 ms - 22772
+[d3295f0d][HTTP] --> POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/execute/sync {"script":"macos: terminateApp","args":[{"bundleId":"com.testmu.samples.DMGSampleApp"}]}
+[d3295f0d][Mac2Driver@7adb] Executing extension command 'macos: terminateApp'
+[d3295f0d][HTTP] <-- POST /session/d3295f0d-1b9d-42c0-b96a-18b53707f178/execute/sync 200 1017 ms - 14
+[d3295f0d][HTTP] --> DELETE /session/d3295f0d-1b9d-42c0-b96a-18b53707f178 {}
+[d3295f0d][BaseDriver] Unsubscribing 7adb6216-cb73-4350-a4a6-d9ba811ee0f6 from topic 'mac2:sessionClaimed'
+[d3295f0d][AppiumDriver@d1e9] Removing session d3295f0d-1b9d-42c0-b96a-18b53707f178 from our master session list
+[d3295f0d][HTTP] <-- DELETE /session/d3295f0d-1b9d-42c0-b96a-18b53707f178 200 2 ms - 14
+[HTTP] --> GET /status {}
+[HTTP] <-- GET /status 200 0 ms - 110
+[HTTP] --> POST /session {"capabilities":{"firstMatch":[{"appium:newCommandTimeout":120,"appium:appPath":"/Users/ltuser/foreman/mac-dmg-appium-sample/build/installed/DMGSampleApp.app","appium:bundleId":"com.testmu.samples.DMGSampleApp","platformName":"mac","appium:automationName":"Mac2","appium:serverStartupTimeout":180000}]}}
+[Appium] Attempting to find matching driver for automationName 'Mac2' and platformName 'mac'
+[Appium] The 'mac2' driver was installed and matched caps.
+[Appium] Will require it at /Users/ltuser/foreman/mac-dmg-appium-sample/.appium/node_modules/appium-mac2-driver
+[AppiumDriver@d1e9] Appium v3.8.0 creating new Mac2Driver (v4.5.0) session
+[AppiumDriver@d1e9] Checking BaseDriver versions for Appium and Mac2Driver
+[AppiumDriver@d1e9] Appium's BaseDriver version is 10.8.1
+[AppiumDriver@d1e9] Mac2Driver's BaseDriver version is 10.8.1
+[067713dd][Mac2Driver@2fc0] Session created with session id: 067713dd-c4fa-47b9-8b48-cd7393854aef
+[067713dd][BaseDriver] Subscribing 2fc002b4-1374-4ce1-a4b2-b80a657e465b to topic 'mac2:sessionClaimed'
+[067713dd][BaseDriver] Subscribing 2fc002b4-1374-4ce1-a4b2-b80a657e465b to topic 'mac2:sessionContended'
+[067713dd][BaseDriver] Subscribing 2fc002b4-1374-4ce1-a4b2-b80a657e465b to topic 'mac2:sessionReleased'
+[067713dd][BaseDriver] Unsubscribing 2fc002b4-1374-4ce1-a4b2-b80a657e465b from topic 'mac2:sessionContended'
+[067713dd][BaseDriver] Unsubscribing 2fc002b4-1374-4ce1-a4b2-b80a657e465b from topic 'mac2:sessionReleased'
+[067713dd][WebDriverAgentMac] The host process has already been listening. Proceeding with session creation
+[067713dd][WD Proxy] Determined the downstream protocol as 'W3C'
+[067713dd][AppiumDriver@d1e9] New Mac2Driver session created successfully, session 067713dd-c4fa-47b9-8b48-cd7393854aef added to master session list
+[HTTP] <-- POST /session 200 6200 ms - 312
+[067713dd][HTTP] --> POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element {"using":"accessibility id","value":"greetButton"}
+[067713dd][HTTP] <-- POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element 200 68 ms - 137
+[067713dd][HTTP] --> POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element/DD360D82-F76C-4961-9088-333EB224B65B/click {"id":"DD360D82-F76C-4961-9088-333EB224B65B"}
+[067713dd][Mac2Driver@2fc0] Driver proxy active, passing request on via HTTP proxy
+[067713dd][WD Proxy] Replacing sessionId DFD3C205-B519-4846-8573-428482AA5A81 with 067713dd-c4fa-47b9-8b48-cd7393854aef
+[067713dd][HTTP] <-- POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element/DD360D82-F76C-4961-9088-333EB224B65B/click 200 398 ms - 14
+[067713dd][HTTP] --> POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element {"using":"accessibility id","value":"greetingLabel"}
+[067713dd][HTTP] <-- POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element 200 40 ms - 137
+[067713dd][HTTP] --> GET /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element/8546C329-91DF-43D0-A06A-6B11EC77C0A5/attribute/value {}
+[067713dd][Mac2Driver@2fc0] Driver proxy active, passing request on via HTTP proxy
+[067713dd][WD Proxy] Replacing sessionId DFD3C205-B519-4846-8573-428482AA5A81 with 067713dd-c4fa-47b9-8b48-cd7393854aef
+[067713dd][HTTP] <-- GET /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element/8546C329-91DF-43D0-A06A-6B11EC77C0A5/attribute/value 200 38 ms - 31
+[067713dd][HTTP] --> POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element {"using":"class name","value":"XCUIElementTypeWindow"}
+[067713dd][HTTP] <-- POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element 200 13 ms - 137
+[067713dd][HTTP] --> GET /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element/FC63338C-2735-4EB3-9C08-0E23B743D0EA/screenshot {}
+[067713dd][Mac2Driver@2fc0] Driver proxy active, passing request on via HTTP proxy
+[067713dd][WD Proxy] Replacing sessionId DFD3C205-B519-4846-8573-428482AA5A81 with 067713dd-c4fa-47b9-8b48-cd7393854aef
+[067713dd][HTTP] <-- GET /session/067713dd-c4fa-47b9-8b48-cd7393854aef/element/FC63338C-2735-4EB3-9C08-0E23B743D0EA/screenshot 200 54 ms - 24320
+[067713dd][HTTP] --> POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/execute/sync {"script":"macos: terminateApp","args":[{"bundleId":"com.testmu.samples.DMGSampleApp"}]}
+[067713dd][Mac2Driver@2fc0] Executing extension command 'macos: terminateApp'
+[067713dd][HTTP] <-- POST /session/067713dd-c4fa-47b9-8b48-cd7393854aef/execute/sync 200 1049 ms - 14
+[067713dd][HTTP] --> DELETE /session/067713dd-c4fa-47b9-8b48-cd7393854aef {}
+[067713dd][BaseDriver] Unsubscribing 2fc002b4-1374-4ce1-a4b2-b80a657e465b from topic 'mac2:sessionClaimed'
+[067713dd][AppiumDriver@d1e9] Removing session 067713dd-c4fa-47b9-8b48-cd7393854aef from our master session list
+[067713dd][HTTP] <-- DELETE /session/067713dd-c4fa-47b9-8b48-cd7393854aef 200 2 ms - 14
+[Appium] Received SIGTERM - shutting down
+[HTTP] Closing Appium HTTP server
+[HTTP] Appium HTTP server has been successfully closed after 0ms

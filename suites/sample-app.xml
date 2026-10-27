@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="macOS DMG App Suite">
+    <test name="DMGSampleApp">
+        <classes>
+            <class name="com.testmu.samples.mac.GreetingTest"/>
+        </classes>
+    </test>
+</suite>

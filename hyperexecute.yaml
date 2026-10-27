@@ -1,0 +1,71 @@
+---
+version: 0.1
+# macOS Tahoe (26). Plain "mac" lands on Sequoia without full Xcode, which Mac2 needs.
+runson: mac26
+
+# One GUI app per VM: Mac2 drives the real desktop, so suites must not share a machine.
+# The matrix gives each suite its own VM.
+concurrency: 2
+matrix:
+  suite: ["sample-app.xml", "marktext.xml"]
+
+# Record the runner's screen for each scenario, so the native app UI is visible in the job.
+captureScreenRecordingForScenarios: true
+# Task status comes from the test command's exit code only, not from the other stages.
+scenarioCommandStatusOnly: true
+
+globalTimeout: 90
+testSuiteTimeout: 60
+testSuiteStep: 60
+
+# Appium 3 needs Node >= 20.19; the default runner Node is 18.
+runtime:
+  language: node
+  version: "22"
+
+env:
+  APPIUM_HOME: ./.appium
+  # Keep the Maven repo inside the project so it can be cached between jobs.
+  MAVEN_OPTS: -Dmaven.repo.local=.m2/repository
+
+# Commands are not run through a shell, so anything using &&, || or if/then is wrapped in bash -c.
+pre:
+  # Runner diagnostics: OS, CPU, Xcode and Automation Mode status (non-fatal).
+  - bash -c 'sw_vers; uname -m; xcodebuild -version || echo "WARN xcodebuild not available; Mac2 needs full Xcode"; automationmodetool || true'
+  - bash -c 'echo "--- Xcode bundles:"; ls -d /Applications/Xcode*.app 2>/dev/null || echo none; xcode-select -p; sudo -n true 2>/dev/null && echo SUDO=passwordless || echo SUDO=unavailable; node -v; java -version 2>&1 | head -1; mvn -v 2>&1 | head -1; whoami'
+  # Mac2 needs Automation Mode; enable it without the auth prompt (non-fatal so diagnostics still run).
+  - bash -c 'sudo -n automationmodetool enable-automationmode-without-authentication || echo "WARN could not enable Automation Mode"; automationmodetool || true'
+  # Skipped when node_modules / .appium come back from the cache.
+  - bash -c '[ -x node_modules/.bin/appium ] || npm ci --no-fund --no-audit'
+  - bash -c 'npx appium driver list --installed --json 2>/dev/null | grep -q mac2 || npx appium driver install mac2'
+  - mvn -q -DskipTests test-compile
+  # Stand-in for the app build stage; produces dist/DMGSampleApp.dmg.
+  - ./scripts/build-sample-dmg.sh
+  # Install both apps from their DMGs (local build and URL); each writes its own env file for the tests.
+  - ./scripts/install-dmg.sh dist/DMGSampleApp.dmg build/installed build/installed-app.env
+  # The URL is written out: HyperExecute substitutes $VARS in commands itself and non-matrix ones come out empty.
+  - ./scripts/install-dmg.sh https://github.com/marktext/marktext/releases/download/v0.23.0/marktext-mac-arm64-0.23.0.dmg build/installed build/installed-marktext.env
+  - mkdir -p build/test-results
+
+# Appium Mac2 server for the whole task; the tests wait for /status before opening a session.
+background:
+  - npx appium --address 127.0.0.1 --port 4723 --log build/test-results/appium.log --log-level info:debug
+
+# Reused while package-lock.json and pom.xml are unchanged.
+cacheKey: '{{ checksum "package-lock.json" }}-{{ checksum "pom.xml" }}'
+cacheDirectories:
+  - node_modules
+  - .appium
+  - .m2
+
+# One TestNG suite per VM (from the matrix); screenshots land in build/test-results.
+testSuites:
+  - mvn test -Dsuite=suites/$suite
+
+uploadArtefacts:
+  - name: macos-test-results
+    path:
+      - build/test-results/**
+      - target/surefire-reports/**
+
+jobLabel: ["macos", "appium-mac2", "dmg"]
